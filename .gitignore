@@ -1,1 +1,4 @@
 project/*
+data/*
+saved_model/*saved_model/
+test_trainer/*
