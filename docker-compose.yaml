@@ -27,12 +27,19 @@ services:
     volumes:
       - grafana-storage:/var/lib/grafana
       - ./data:/opt/data
+      - ./provisioning/datasources:/etc/grafana/provisioning/datasources
+      - ./provisioning/dashboards:/etc/grafana/provisioning/dashboards
     depends_on:
       - ml_app
     environment:
       GF_PLUGINS_PREINSTALL: 'frser-sqlite-datasource'
-      #GF_SECURITY_ADMIN_USER: 'worker'
-      #GF_SECURITY_ADMIN_PASSWORD: 'password'
+      GF_SECURITY_ADMIN_USER: 'worker'
+      GF_SECURITY_ADMIN_PASSWORD: 'password'
+    command:
+      - "sh"
+      - "-c"
+      - "grafana cli admin
+        reset-admin-password 'password' && /run.sh"
 
 
 volumes:

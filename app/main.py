@@ -15,9 +15,6 @@ engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# Crea le tabelle nel DB
-Base.metadata.create_all(bind=engine)
-
 #tabelle per le metriche
 class SentimentLog(Base):
     __tablename__ = "sentiment_logs"
@@ -40,6 +37,8 @@ class TrainingLog(Base):
     eval_steps_per_second = Column(Float)
     timestamp = Column(DateTime, default=datetime.datetime.utcnow)
     #{'eval_loss': 0.003190046874806285, 'eval_recall': 1.0, 'eval_runtime': 5.1447, 'eval_samples_per_second': 19.438, 'eval_steps_per_second': 4.859, 'epoch': 10.0}
+
+Base.metadata.create_all(bind=engine)
 
 # --- SCHEMI PER API ---
 class SentimentRequest(BaseModel):
