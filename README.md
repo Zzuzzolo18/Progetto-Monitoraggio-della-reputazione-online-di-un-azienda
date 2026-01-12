@@ -17,3 +17,4 @@ Benefici della Soluzione:
 
 Prima di avviare il container aggiungi la tua chiave Kaggle in app/keys/kaggle.json
 Consulta poi il readme nella cartella **app**
+Consulta il readme in **provisioning** per l'utilizzo di Grafana per il monitoring dell'applicazione

@@ -33,3 +33,9 @@ In questo file è presente il cuore del funzionamento del servizio API con i seg
 ## 2. Training
 
 Il modulo training gestisce la logica di addestramento del modello, interfacciandosi con il dataset di Kaggle e salvando i pesi risultanti nelle cartelle di versionamento locale.
+
+---
+
+## 3. Database
+
+Nel database sono disponibili le due tabelle **sentiment_logs** e **training_logs** consultabili tramite l'applicazione Grafana.
