@@ -25,9 +25,9 @@ jobs:
 
       - name: Create required directories
         run: |
-          sudo mkdir -p /opt/data /opt/versioned_models
-          sudo chmod -R 777 /opt/
-          sudo chmod -R 777 ./data/
+          mkdir -p opt/data opt/versioned_models
+          chmod -R 777 opt/
+          ls
 
       - name: Run Tests with Pytest
         env:
