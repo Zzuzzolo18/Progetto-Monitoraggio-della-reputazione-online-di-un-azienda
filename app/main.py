@@ -10,7 +10,7 @@ from app.training import retraining
 import glob
 
 # --- CONFIGURAZIONE DATABASE (Per Grafana) ---
-DATABASE_URL = "sqlite:///./opt/data/sentiment_logs.db"
+DATABASE_URL=os.getenv("DATABASE_URL", "sqlite:///./opt/data/sentiment_logs.db")
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
