@@ -29,5 +29,8 @@ jobs:
           sudo chmod -R 777 /opt/
 
       - name: Run Tests with Pytest
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
         run: |
           python -m pytest
