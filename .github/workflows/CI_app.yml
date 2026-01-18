@@ -27,6 +27,7 @@ jobs:
         run: |
           sudo mkdir -p /opt/data /opt/versioned_models
           sudo chmod -R 777 /opt/
+          sudo chmod -R 777 ./data/
 
       - name: Run Tests with Pytest
         env:
