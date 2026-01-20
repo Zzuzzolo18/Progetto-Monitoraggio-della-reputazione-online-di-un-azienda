@@ -198,7 +198,7 @@ def get_models():
 class version(BaseModel):
     version: str
 
-@app.get("/change_model")
+@app.post("/change_model")
 def change_model(version: version):
     """Cambia il modello attivo a una versione specifica"""
     try:
